@@ -1,5 +1,7 @@
 public class Conta {
-    String dono;
+    
+    Cliente donoConta = new Cliente();
+    
     double saldo;
     double limite;
     int numero;
@@ -25,7 +27,8 @@ public class Conta {
     }
     
     void imprimir () {
-        System.out.println("Nome: " +dono);
+        System.out.println("Cliente:\n ");
+        donoConta.imprimirDados();
         System.out.println("Numero da conta: " +numero);
         System.out.println("Saldo atual: " +saldo);
         System.out.println("Limite: " +limite);
