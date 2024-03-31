@@ -1,12 +1,13 @@
 public class Conta {
     String dono;
     double saldo;
+    double limite;
     int numero;
     String agencia;
     double valor;
 
     boolean depositar (double valor) {
-        if (valor > 0.0) {
+        if (valor > 0.0 && (saldo+valor) <= limite) {
             this.saldo += valor;
             return true;
         } else {
@@ -21,5 +22,14 @@ public class Conta {
         } else {
             return false;
         }
+    }
+    
+    void imprimir () {
+        System.out.println("Nome: " +dono);
+        System.out.println("Numero da conta: " +numero);
+        System.out.println("Saldo atual: " +saldo);
+        System.out.println("Limite: " +limite);
+        
+        System.out.println();
     }
 }
